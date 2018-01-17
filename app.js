@@ -6,7 +6,7 @@ var app = express();
 
 //Configurando Mongoose e Conexão com MongoDB
 var mongoose = require('mongoose');
-mongoose.Promise = global.Promise;
+mongoose.Promise = global.Promise; //Fazer a conexão se tornar assincrona 
 mongoose.connect('mongodb://localhost/gdg-oauth', { useMongoClient: true })
     .then(() => console.log('Conexão Realizada com Sucesso'))
     .catch((err) => console.error(err));
